@@ -1,0 +1,35 @@
+openapi: 3.0.3
+
+info:
+  title: OpenAPI Gym
+  description: info.description here.
+  contact:
+    name: hainet50b
+    url: https://github.com/hainet50b
+    email: 20400616+hainet50b@users.noreply.github.com
+  license:
+    name: Pmacho Licence
+    url: https://github.com/hainet50b
+  version: 1.0.0
+
+servers:
+  - url: https://{service}.programacho.com
+    description: programacho.com (prod)
+    variables:
+      service:
+        enum:
+          - pages
+          - blog
+        default: pages
+        description: servers[].variables.*.description here.
+  - url: https://{service}.dev.programacho.com
+    description: programacho.com (dev)
+    variables:
+      service:
+        default: pages
+        description: servers[].variables.*.description here.
+
+paths:
+  /v1/users:
+    get:
+      summary: ÉÜÅ[ÉUÅ[éÊìæ
