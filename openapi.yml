@@ -33,3 +33,14 @@ paths:
   /v1/users:
     get:
       summary: ƒ†[ƒU[æ“¾
+      security:
+        - basic: []
+
+security:
+  - basic: []
+
+components:
+  securitySchemes:
+    basic:
+      type: http
+      scheme: basic
