@@ -21,18 +21,22 @@ servers:
           - pages
           - blog
         default: pages
-        description: servers[].variables.*.description here.
+        description: サブドメインを選択してください。
   - url: https://{service}.dev.programacho.com
     description: programacho.com (dev)
     variables:
       service:
         default: pages
-        description: servers[].variables.*.description here.
+        description: サブドメインを入力してください。
 
 paths:
   /v1/users:
     get:
       summary: ユーザー取得
+      description: ユーザーを取得します。
+      externalDocs:
+        url: https://github.com/hainet50b
+      operationId: getUsers
       security:
         - basic: []
 
