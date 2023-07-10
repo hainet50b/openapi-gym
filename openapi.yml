@@ -39,11 +39,49 @@ paths:
       operationId: getUsers
       security:
         - basic: []
+      responses:
+        "200":
+          $ref: "#/components/responses/findUsers"
 
 security:
   - basic: []
 
 components:
+  parameters:
+    ContentType:
+      name: Content-Type
+      in: header
+      description: Content-Type
+      required: true
+      allowEmptyValue: false
+      example: "application/json; charset=UTF-8"
+  responses:
+    findUsers:
+      description: 正常
+      headers:
+        "Content-Type":
+          $ref: "#/components/parameters/ContentType"
+      content:
+        "application/json":
+          schema:
+            $ref: "#/components/schemas/User"
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          description: ユーザーID
+          type: string
+          maxLength: 36
+          example: n77b65b76-32f0-4398-97f0-a2c74e29ffed
+        name:
+          description: ユーザー名
+          type: string
+          maxLength: 32
+          example: hainet50b
+      required:
+        - id
+        - name
   securitySchemes:
     basic:
       type: http
